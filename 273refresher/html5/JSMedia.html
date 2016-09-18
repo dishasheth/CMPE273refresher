@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Media</title>
+<script>
+function playselected()
+{
+var x=document.getElementById('forvideo').value;
+console.log(x);
+
+var vid=document.getElementById('video_id');
+if(x=="Burma Bridge")
+	vid.setAttribute("src",	"C:\Users\DELL\Videos\Burma Bridge");
+else if(x=="Techo trail") 
+	vid.setAttribute("src","E:\Techo Trail");
+	
+	vid.play();
+}
+</script>
+</head>
+<body>
+<table>
+<tr><td>
+<select id="forvideo">
+<option>Burma Bridge</option>
+<option>Techo trail</option>
+</select></td>
+<td><input type="submit" id="play" value="Play selected" onclick="playselected()"></td>
+</tr>
+<tr><td>
+<video width="300" height="200" id="video_id" controls></video> 
+</td></tr>
+</table>
+</body>
+</html>

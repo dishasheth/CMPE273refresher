@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Regular Expression</title>
+</head>
+<script>
+function checkregexp()
+{
+var a=document.getElementById('str').value;
+var c=new RegExp(a,"i");
+var b=document.getElementById('mainstr').value;
+var n=b.search(c);
+n=n+1;
+document.getElementById('position').innerHTML="Position : "+n;
+}
+</script>
+<body>
+<table>
+<tr>
+<td>
+<label>Check for (RegExp) :</label>
+</td>
+<td>
+<input type="text" id="str"></input>
+</td>
+</tr>
+<tr>
+<td>
+<label>Check in :</label>
+</td>
+<td>
+<input type="text" id="mainstr"></input>
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" id="check" value="Click to search" onclick="checkregexp()"></input>
+</td></tr>
+<tr><td>
+<label id="position"></label>
+</td></tr>
+</table>
+</body>
+</html>

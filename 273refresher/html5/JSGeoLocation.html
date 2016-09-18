@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>GeoLocation Demo</title>
+<script type="text/javascript">
+function Getlocation()
+{
+	var output = document.getElementById('mapit');
+	if(!navigator.geolocation)
+		{
+output.innerHTML()="Your browser doesn't support geolocation API";
+		return;
+		}
+	var success=function(position)
+	{
+		var lat=position.coords.latitude;
+		var longi=position.coords.longitude;
+		var height=position.coords.altitude;
+		document.getElementById('latitude').innerHTML="Current latitude : "+lat;
+		document.getElementById('longitude').innerHTML="Current longitude : "+longi;
+		document.getElementById('height').innerHTML="Altitude : "+height;
+		coords=lat+","+longi;
+		document.getElementById('map').setAttribute('src','https://maps.google.com/?q='+coords+'&z=60&output=embed');
+		
+		
+		
+	}
+	var error=function()
+	{	
+		output.innerHTML="Location not obtained";
+		
+	}
+		navigator.geolocation.getCurrentPosition(success, error);
+	}
+
+
+</script>
+</head>
+<body>
+<input type="button" value="Get Location" onclick="Getlocation()"/>
+<p id="latitude"></p>
+<p id="longitude"></p>
+<p id="height"></p>
+<div id="mapit">
+<iframe id="map"></iframe>
+</div>
+		</body>
+		</html>

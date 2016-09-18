@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript JSON</title>
+<script type="text/javascript">
+function getDetails()
+{
+var m1=document.getElementById('m1').value;
+var m2=document.getElementById('m2').value;
+var e1=document.getElementById('e1').value;
+var e2=document.getElementById('e2').value;
+var s1=document.getElementById('s1').value;
+var s2=document.getElementById('s2').value; 
+                  var text = '{"student":[' +
+                  '{"maths":'+m1+',"science":'+s1+',"english":'+e1+' },' +
+                  '{"maths":'+m2+',"science":'+s2+',"english":'+e2+' }]}';                   
+obj1=JSON.parse(text);
+document.getElementById('tot1').innerHTML=obj1.student[0].maths+obj1.student[0].science+obj1.student[0].english;
+document.getElementById('tot2').innerHTML=obj1.student[1].maths+obj1.student[1].science+obj1.student[1].english;
+}
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td><label>Student 1:</label></td>
+<td></td>
+<td><label>Student 2:</label></td>
+<td></td>
+</tr>
+<tr>
+<td><label>Maths :</label></td>
+<td><input id="m1"></td>
+<td><label>Maths :</label></td>
+<td><input id="m2"></td>
+</tr>
+<tr>
+<td><label>English :</label></td>
+<td><input id="e1"></td>
+<td><label>English :</label></td>
+<td><input id="e2"></td>
+</tr>
+<tr>
+<td><label>Science :</label></td>
+<td><input id="s1"></td>
+<td><label>Science :</label></td>
+<td><input id="s2"></td>
+</tr>
+<tr>
+<td><label>Total :</label></td>
+<td><label id="tot1"></label></td>
+<td><label>Total :</label></td>
+<td><label id="tot2"></label></td>
+</tr>
+<tr><td><input type="submit" id="getd" value="Get Details" onclick="getDetails()"></td></tr>
+</table>
+</body>
+</html>

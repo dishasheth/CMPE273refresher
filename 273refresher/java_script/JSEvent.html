@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Event</title>
+</head>
+<script type="text/javascript">
+function applecost()
+{
+	var quantity=document.getElementById('appleq').value;
+	var price=quantity*3;
+	document.getElementById('applec1').innerHTML=price;
+}
+function peachcost()
+{
+	var quantity=document.getElementById('peachq').value;
+	var price=quantity*2;
+	document.getElementById('peachc1').innerHTML=price;
+}
+function milkcost()
+{
+	var quantity=document.getElementById('milkq').value;
+	var price=quantity*5;
+	document.getElementById('milk1').innerHTML=price;
+}
+function calctotal()
+{
+	var a=parseInt(document.getElementById('applec1').innerHTML);
+	var p=parseInt(document.getElementById('peachc1').innerHTML);
+	var m=parseInt(document.getElementById('milk1').innerHTML);
+	var total=a+p+m;
+	document.getElementById('total').innerHTML="$"+total;
+}
+</script>
+<body>
+<h2>SHOPPING CART</h2>
+<table>
+<tr>
+<td>
+<label for="appleq">Apples :</label>
+</td>
+<td>
+<select id="appleq" onchange="applecost()">
+<option>0</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+</td>
+<td>
+<label id="applec">Cost of apples :</label>
+<label id="applec1">0</label>
+</td>
+</tr>
+<tr>
+<td>
+<label for="peach">Peaches :</label>
+</td>
+<td>
+<select id="peachq" onchange="peachcost()">
+<option>0</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+</td>
+<td>
+<label id="peachc">Cost of peaches :</label>
+<label id="peachc1">0</label>
+</td>
+</tr>
+<tr>
+<td>
+<label for="milkq">Milk cans :</label>
+</td>
+<td>
+<select id="milkq" onchange="milkcost()">
+<option>0</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+</select>
+</td>
+<td>
+<label id="milk">Cost of milk :</label>
+<label id="milk1">0</label>
+</td>
+</tr>
+<tr>
+<td>
+<input type="button" id="bill" value="CALCULATE CART COST" onclick="calctotal()"></input>
+</td>
+</tr>
+<tr>
+<td>
+<label id="total"></label>
+</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Local Storage</title>
+
+<script type="text/javascript">
+function storeDetails()
+{
+	localStorage.clear();
+	var bname=document.getElementById('username').value;
+	var quant=document.getElementById('password').value;
+	//var disp=document.getElementById('youCart');
+	localStorage.setItem(bname,quant);
+	alert("username password added");
+	document.getElementById('username').value=" ";
+	document.getElementById('password').value=" ";
+	
+	}
+	function retrieveDetails(){
+		for(var x=0;x<localStorage.length;x++){
+	document.getElementById('username').value=""+localStorage.key(x);
+	document.getElementById('password').value=""+localStorage.getItem(localStorage.key(x));
+	console.log(localStorage.key(x)+" "+localStorage.getItem(localStorage.key(x)));
+	}}
+</script>
+</head>
+<body>
+
+<table>
+<tr>
+<td>
+<label for="username">Username :</label>
+</td>
+<td>
+<input type="text" id="username"></input>
+</td>
+<td>
+	<label for="password">Password :</label>
+</td>
+<td>
+<input type="text" id="password"></input>
+ </td>
+ </tr>
+	</table>
+ <br/>
+ <input type="submit" id="add" value="Add User" onclick="storeDetails()">
+ <input type="submit" id="retrieve" value="Retrieve stored username/password" onclick="retrieveDetails()">
+ <p id="disp"></p>
+ </body>
+</html>

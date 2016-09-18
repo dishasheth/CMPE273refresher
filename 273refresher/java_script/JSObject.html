@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Object</title>
+<script type="text/javascript">
+function time1()
+{
+	
+
+var f=0;
+var h1=document.getElementById("h1").value;
+var m1=document.getElementById("m1").value;
+var s1=document.getElementById("s1").value;
+
+var h2=document.getElementById("h2").value;
+var m2=document.getElementById("m2").value;
+var s2=document.getElementById("s2").value;
+
+
+
+var t1=new time(h1,m1,s1);
+var s=new time(h2,m2,s2);
+
+//console.log(time);
+console.log(t1.hh+" "+t1.mm+" "+t1.ss);
+console.log(s.hh+" "+s.mm+" "+s.ss);
+
+if(t1.hh>23||t1.mm>59||t1.ss>59||s.hh>23||s.mm>59||s.ss>59)
+{
+document.getElementById('timediff').innerHTML="Enter valid time";
+}
+else
+	{
+if(t1.hh>s.hh)
+{
+f=1;
+t1.hh=t1.hh-s.hh;
+{
+if(t1.ss>s.ss)
+ {
+  t1.ss=t1.ss-s.ss;
+ }
+else
+ {
+ t1.mm--;
+ t1.ss=(t1.ss+60)-s.ss;
+ }
+if(t1.mm>s.mm)
+ {
+ t1.mm=t1.mm-s.mm;
+ }
+ else
+ {
+ t1.mm=(60+t1.mm)-s.mm;
+ t1.hh--;
+ }
+}
+if(t1.ss==60)
+{
+t1.ss=00;
+t1.mm++;
+}
+if(t1.mm==60)
+{
+t1.mm=00;
+t1.hh++;
+}
+if(t1.hh==s.hh && t1.mm==0 && t1.ss==0)
+{
+t1.hh=00;
+}
+}
+else
+{
+	f=0;
+	document.getElementById('timediff').innerHTML="Greater time first";
+//System.out.println("Greater time first");
+
+}
+if(f==1)
+{
+	document.getElementById('timediff').innerHTML="DIFFERENCE = "+t1.hh+" : "+t1.mm+" : "+t1.ss; 
+}
+}
+}
+function time(hh,mm,ss)
+{
+	this.hh=parseInt(hh);
+	this.mm=parseInt(mm);
+	this.ss=parseInt(ss);
+	//document.writeln(hh);
+//	document.writeln(hh);
+	
+}
+
+</script>
+</head>
+
+<body>
+<table>
+<tr>
+<td><label>Enter time 1 (hh:mm:ss) :</label></td>
+<td>
+<input type="number" id="h1" min=0 max=23>
+<input type="number" id="m1" min=0 max=59>
+<input type="number" id="s1" min=0 max=59>
+</td></tr>
+<tr>
+<td><label>Enter time 2 (hh:mm:ss) :</label></td>
+<td>
+<input type="number" id="h2" min=0 max=23>
+<input type="number" id="m2" min=0 max=59>
+<input type="number" id="s2" min=0 max=59>
+</td></tr>
+<tr>
+<td><input type="button" value="Find difference" id="h1" onclick="time1()"></input></td>
+</tr>
+<tr><td><label id="timediff"></label></td></tr>
+</table>
+</body>
+</html>

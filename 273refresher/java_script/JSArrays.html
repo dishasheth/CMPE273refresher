@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Arrays</title>
+<script type="text/javascript">
+function getdetails()
+{
+var index=document.getElementById('empid').value;
+var name=["Saina","Sakshi","Deepa"];
+var number=[9428581994,8879801994,7383551414];
+document.getElementById('name').innerHTML=name[index];
+document.getElementById('contact').innerHTML=number[index];
+	}
+</script>
+</head>
+
+<body>
+<label for="empid">Select employee number :</label>
+<select id="empid">
+<option>0</option>
+<option>1</option>
+<option>2</option>
+</select>
+<input type="button" id="calc" value="Search details" onclick="getdetails()"></input>
+<table>
+<tr>
+<td><label>Name :</label></td>
+<td><label id="name"></label></td>
+</tr>
+<tr>
+<td><label>Contact number :</label></td>
+<td><label id="contact"></label></td>
+</tr>
+</table>
+</body>
+</html>

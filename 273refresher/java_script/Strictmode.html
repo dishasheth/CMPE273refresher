@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Strict Mode</title>
+<script type="text/javascript">
+'use strict';
+function calArea()
+{
+	try{
+length=document.getElementById('Len').value;
+width=document.getElementById('Len').value;
+
+area=length*width;
+
+disp=document.getElementById('disp');
+
+disp.innerHTML=disp;
+	}
+	catch(e)
+	{
+		if(e instanceof ReferenceError)
+			{
+			disp.innerHTML="Function in strict mode.Declare variables to use them."
+			}
+		
+	}
+}
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<h3>Javascript Strict Mode Demo</h3>
+<label for="len">Enter Length</label>
+<input type="number" id="Len" min=1 />
+<label for="wid">Enter Length</label>
+<input type="number" id="wid" min=1 />
+
+<p id="disp">Area</p> 
+
+<input type="button" id="but" onclick="calArea()" value = "Find Area" />
+</body>
+</html>

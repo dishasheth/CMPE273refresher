@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+var flat={
+	hall :function()
+	{
+		return "1 hall";
+	}	
+};
+
+var flat2bhk=Object.create(flat);
+
+if(flat.isPrototypeOf(flat2bhk))	
+	{
+	document.writeln("2BHK has 2 bed and "+flat2bhk.hall()+" and");
+	}
+
+var flat3bhk=Object.create(flat);
+
+if(flat.isPrototypeOf(flat3bhk))	
+	{
+	document.writeln("\n3BHK has 3 bed and "+flat3bhk.hall());
+	}
+
+</script>
+<meta charset="ISO-8859-1">
+<title>JavaScript Inheritance</title>
+</head>
+<body>
+
+</body>
+</html>

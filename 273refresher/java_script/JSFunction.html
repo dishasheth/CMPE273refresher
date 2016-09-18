@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function useBMI()
+{
+	var f=document.getElementById('foot').value;
+	var i=document.getElementById('inches').value;
+	var w=f*0.3048+i*0.0254;
+	var weight=23*w*w;
+	weight=weight.toFixed(2);
+	document.getElementById('weight').innerHTML=weight+" kg";
+	}
+</script>
+</head>
+<body>
+<h3>Enter your height in feet and inches : </h3>
+<input type="number" id="foot"></input>
+<input type="number" id="inches"></input>
+<input type="button" id="calc" value="Calculate weight" onclick="useBMI()"></input>
+<h3>Your ideal weight(for ideal BMI 23) is : </h3>
+<p id="weight"></p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JavaScript Conditions</title>
+<script type="text/javascript">
+function calcost(){
+	var w=document.getElementById('weight').value;
+	var costt;
+	if(w<10)
+		{ costt=5; }
+	else if(w<20)
+		{
+		w=w-10;
+		costt=5+w*4;
+		}
+	else if(w<50){
+		w=w-20;
+		costt=5+40+w*3;
+	}
+	else{
+		w=w-50;
+		costt=45+90+w*2;
+		
+	}
+	
+	document.getElementById('cost').innerHTML="Cost is : $"+costt;
+	
+}
+</script>
+</head>
+<body>
+<h2>PHONE BILL CALCULATOR</h2>
+<table>
+<tr>
+<td><label>Enter call units :</label></td>
+<td><input type="number" id="weight"></input></td>
+</tr>
+<tr><td><input type="button" id="calc" value="Calculate cost" onclick="calcost()"></td></tr>
+<tr>
+<td><p id="cost"></p></td></tr>
+</table>
+</body>
+</html>

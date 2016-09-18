@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>HTML Input Type</title>
+</head>
+<body>
+<h3> Fill the below details to purchase tickets</h3>
+<div id="formbody">
+<form>
+<fieldset>
+<legend>Booking Details</legend>
+<table>
+	<tr>
+	<td><label for="fullname">Full Name (required) </label></td>
+	<td><input type="text" id="fullname" size=40 required aria-describedby="formatname" autofocus="autofocus" ></td>
+</tr>
+<tr>
+	<td><label for="date">Date (required) </label></td>
+	<td><input type="date" id="date"  required></td></tr>
+	
+	<tr>
+	<td><label for="time">Time (required) </label></td>
+	<td><input type="time" id="time" required ></td>
+	
+</tr>
+<tr>
+	<td><label for="tablefor">Number of tickets  </label></td>
+	<td><input type="range" min=1 max=8 value=4 id="tablefor" oninput="outval.value=tablefor.value" ></td>	
+</tr>
+<tr>
+	<td><label for="email">Email (required) </label></td>
+	<td><input type="email" id="email" size=40 required aria-describedby="formatemail" placeholder="abc@xyz.com"></td>
+</tr>
+
+<tr>
+<tr>
+	<td><label for="mob">Mobile (required) </label></td>
+	<td><input type="tel" id="mob" size=10 required pattern="\d{3}[\-]\d{3}[\-]\d{4}"></td>
+	
+</tr>
+<tr>
+<td><input type="checkbox" required="required" style="float:right"> </td>
+<td><label>I accept all terms and conditions</label></td>
+</tr>
+	</table>
+	<br />
+	<input type="submit" value="Submit">
+	</fieldset>
+</form>
+
+
+</div>
+</body>
+</html>
